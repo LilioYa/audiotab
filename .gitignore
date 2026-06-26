@@ -4,4 +4,7 @@ __pycache__/
 *.mp3
 *.wav
 *.mid
+downloads/
+midi_output/
+pdf_output/
 venv/
