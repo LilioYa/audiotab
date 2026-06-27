@@ -20,6 +20,7 @@ def clean(midi_path, mode="full"):
 
         if len(chord.pitches) == 0 :
             flat.remove(chord)
+    flat.quantize((4,), True, True, True)
 
     if mode == "simple" :
         flat = simplify(flat)
