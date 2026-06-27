@@ -7,4 +7,6 @@ __pycache__/
 downloads/
 midi_output/
 pdf_output/
+midis/
+tabs/
 venv/
