@@ -22,6 +22,5 @@ def export(midi_path, output_dir="pdf_output"):
         part.insert(0, instrument.Guitar())
 
     score.write("lily.pdf", fp=output_base)
-    print(f"PDF généré : {output_base}.pdf")
 
     return f"{output_base}.pdf"
