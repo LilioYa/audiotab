@@ -6,7 +6,7 @@ GUITAR_MAX_MIDI = 88
 MIN_DURATION = 0.125
 
 
-def clean(midi_path, mode="full"):
+def clean(midi_path, difficulty="full"):
     score = music21.converter.parse(midi_path)
     flat = score.flatten()
     for chord in flat.notes:
@@ -22,7 +22,7 @@ def clean(midi_path, mode="full"):
             flat.remove(chord)
     flat.quantize((4,), True, True, True)
 
-    if mode == "simple" :
+    if difficulty == "simple" :
         flat = simplify(flat)
 
     output_path = midi_path.replace(".mid", "_clean.mid") 

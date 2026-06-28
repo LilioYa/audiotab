@@ -8,7 +8,8 @@ from exporter import export
 def main():
     parser = argparse.ArgumentParser(description="Transcribe audio from a URL to sheet music")
     parser.add_argument("url", help="YouTube or TikTok URL")
-    parser.add_argument("--mode", choices=["simple", "full"], default="full", help="Transcription mode")
+    parser.add_argument("--difficulty", choices=["simple", "full"], default="full", help="Difficulty transcription mode")
+    parser.add_argument("--mode", choices=["music_theorie", "tabs"], default="tabs", help="Type of the output sheet")
     args = parser.parse_args()
 
     print(f"Downloading audio...")
@@ -18,10 +19,10 @@ def main():
     midi_path = transcrib(file_path)
 
     print(f"Cleaning MIDI...")
-    clean_midi_path = clean(midi_path, mode=args.mode)
+    clean_midi_path = clean(midi_path, difficulty=args.difficulty)
 
     print(f"Exporting to PDF...")
-    pdf_path = export(clean_midi_path)
+    pdf_path = export(clean_midi_path, mode=args.mode)
 
     print(f"Done ! PDF saved at {pdf_path}")
 
