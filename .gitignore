@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 .env
+*.mid*.egg-info/
 venv/
 
 # audiotab output (generated PDFs)
@@ -10,4 +11,3 @@ output/
 # Stray audio/MIDI files (in case something is run outside the temp dir)
 *.mp3
 *.wav
-*.mid
