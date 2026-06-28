@@ -15,7 +15,7 @@ import subprocess
 import music21
 from music21 import instrument
 
-from lily_converter import element_to_lily
+from .lily_converter import element_to_lily
 
 
 def sanitize_filename(name):

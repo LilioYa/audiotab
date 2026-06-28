@@ -21,10 +21,10 @@ import shutil
 import sys
 import tempfile
 
-from downloader import download
-from transcriber import transcribe
-from cleaner import clean
-from exporter import export
+from .downloader import download
+from .transcriber import transcribe
+from .cleaner import clean
+from .exporter import export
 
 
 def parse_args():

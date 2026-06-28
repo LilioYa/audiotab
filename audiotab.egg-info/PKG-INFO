@@ -1,3 +1,18 @@
+Metadata-Version: 2.4
+Name: audiotab
+Version: 0.1.0
+Summary: Turn an online video or audio link into guitar sheet music or tablature.
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: yt-dlp
+Requires-Dist: basic-pitch
+Requires-Dist: music21
+Dynamic: license-file
+
 # audiotab
 
 Turn an online video or audio link into guitar sheet music or tablature.
@@ -25,20 +40,17 @@ directory that is removed automatically when the program exits.
 
 ## Installation
 
-First, install FFmpeg and LilyPond with your system's package manager. Then, clone this repository, navigate to the project root directory, and install `audiotab` locally in editable mode:
+Install FFmpeg and LilyPond with your system's package manager, then install the
+Python dependencies:
 
 ```bash
-pip install -e .
-
+pip install yt-dlp basic-pitch music21
 ```
 
 ## Usage
 
-Once installed, the `audiotab` command becomes available anywhere in your terminal:
-
 ```bash
-audiotab "<url>"
-
+python main.py "<url>"
 ```
 
 ### Options
@@ -55,14 +67,13 @@ audiotab "<url>"
 
 ```bash
 # Single melodic line, as a guitar tab
-audiotab "<url>" --difficulty simple
+python main.py "<url>" --difficulty simple
 
 # Classic music score instead of a tab
-audiotab "<url>" --mode notation
+python main.py "<url>" --mode notation
 
 # Only the first 35 seconds
-audiotab "<url>" --start 0 --end 35
-
+python main.py "<url>" --start 0 --end 35
 ```
 
 ## Cleaning
@@ -84,10 +95,10 @@ transcription.
 
 ## Tech stack
 
-* [yt-dlp](https://github.com/yt-dlp/yt-dlp) - audio download
-* [Basic Pitch](https://github.com/spotify/basic-pitch) - audio-to-MIDI transcription
-* [music21](https://web.mit.edu/music21/) - MIDI parsing and manipulation
-* [LilyPond](https://lilypond.org/) - PDF rendering
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) - audio download
+- [Basic Pitch](https://github.com/spotify/basic-pitch) - audio-to-MIDI transcription
+- [music21](https://web.mit.edu/music21/) - MIDI parsing and manipulation
+- [LilyPond](https://lilypond.org/) - PDF rendering
 
 ## License
 
