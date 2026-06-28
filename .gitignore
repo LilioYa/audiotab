@@ -1,12 +1,13 @@
+# Python
 __pycache__/
 *.pyc
 .env
+venv/
+
+# audiotab output (generated PDFs)
+output/
+
+# Stray audio/MIDI files (in case something is run outside the temp dir)
 *.mp3
 *.wav
 *.mid
-downloads/
-midi_output/
-pdf_output/
-midis/
-tabs/
-venv/
